@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:poorneshapp/pages/homePage.dart';
 import 'package:poorneshapp/pages/intropage.dart';
-import 'package:poorneshapp/pages/loginPage.dart'; // Importing the necessary Flutter package
+import 'package:poorneshapp/pages/loginPage.dart'; 
 
 void main() {
-  runApp(MyApp()); // Entry point of the app
+  runApp(MyApp()); 
 }
 
 class MyApp extends StatelessWidget {

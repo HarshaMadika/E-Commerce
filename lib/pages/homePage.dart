@@ -16,15 +16,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0; // Keeps track of the selected tab
+  int _currentIndex = 0; 
 
   final List<Widget> _pages = [
-    HomePageContent(), // The main page content (home)
-    CategoriesPage(), // Placeholder for categories page
-    ProfilePage(), // Navigates to the profile page
+    HomePageContent(), 
+    CategoriesPage(), 
+    ProfilePage(), 
   ];
 
-  // Handle BottomNavigationBar item taps
+
   void _onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
@@ -42,17 +42,16 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
-              // Navigate to cart page
             },
           ),
         ],
       ),
-      body: _pages[_currentIndex], // Shows the currently selected page
+      body: _pages[_currentIndex], 
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         selectedItemColor: Colors.blueAccent,
-        onTap: _onTabTapped, // Call the onTap function
+        onTap: _onTabTapped, 
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -72,12 +71,12 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// Separate widget for the HomePage content
+
 class HomePageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(), // For smooth scrolling
+      physics: BouncingScrollPhysics(), 
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -107,7 +106,7 @@ class HomePageContent extends StatelessWidget {
             ),
             SizedBox(height: 20),
 
-            // Full-Width Scrollable Banners (PageView)
+            
             Text(
               "Sales & Upcoming Offers",
               style: TextStyle(
@@ -127,7 +126,6 @@ class HomePageContent extends StatelessWidget {
                         "Get the latest winter collection at half price!",
                     imageUrl: 'lib/assets/images/winter.png',
                     onTap: () {
-                      // Navigate to sale details
                       print("Clicked on Winter Sale");
                     },
                   ),
@@ -136,7 +134,6 @@ class HomePageContent extends StatelessWidget {
                     description: "Massive discounts this Black Friday!",
                     imageUrl: 'lib/assets/images/blackfriday.png',
                     onTap: () {
-                      // Navigate to Black Friday details
                       print("Clicked on Black Friday");
                     },
                   ),
@@ -154,7 +151,6 @@ class HomePageContent extends StatelessWidget {
             ),
             SizedBox(height: 20),
 
-            // Featured Products Section
             Text(
               "Featured Products",
               style: TextStyle(
@@ -168,9 +164,9 @@ class HomePageContent extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               shrinkWrap:
-                  true, // Important: Allows GridView to be scrollable inside SingleChildScrollView
+                  true, 
               physics:
-                  NeverScrollableScrollPhysics(), // Disable GridView scrolling, rely on parent scroll
+                  NeverScrollableScrollPhysics(),
               children: [
                 ProductCard(
                   imageUrl: 'https://via.placeholder.com/150',
@@ -201,7 +197,6 @@ class HomePageContent extends StatelessWidget {
   }
 }
 
-// Placeholder CategoriesPage
 class CategoriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -214,7 +209,6 @@ class CategoriesPage extends StatelessWidget {
   }
 }
 
-// OfferBanner Widget (Full-Width Banner for Sales and Offers)
 class OfferBanner extends StatelessWidget {
   final String title;
   final String description;
